@@ -44,7 +44,7 @@ public class PatientController {
 
     @UrlMapping(path = "/patient/delete", methode = "GET")
     @ToJson
-    // @Roles({"admin"})
+    @Roles({"admin"})
     public ModelAndView supprimerPatient(@Param("id") int id) {
         Patient patient = dao.findById(Patient.class, id);
         if (patient != null) {
